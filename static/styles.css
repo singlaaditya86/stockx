@@ -215,10 +215,20 @@ header{
     background-color: none;
     background: none;
 }
+.data .border header{
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.data .border header a{
+    font-family: "Iceland", sans-serif;
+    height: 50% ;
+    background-color: #ffffff;
+}
 
 .data select{
     width: 60%;
-    height: 60px;
+    height: 60%;
     text-align: center;
     align-content: center;
     list-style-type: square;
@@ -239,7 +249,7 @@ header{
 
 .data select{
     width: 60%;
-    height: 60px;
+    height: 60%;
     text-align: center;
     align-content: center;
     list-style-type: square;
