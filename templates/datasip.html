@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>StockX-SIP</title> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sip.css') }}" />
+  </head>
+  <body>
+    <header>
+      <a href="/"
+        ><img
+          class="logo"
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="logo"
+      /></a>
+      <nav>
+        <div class="dropdown" name="namelist">
+          <ul>
+            <li><a href="/cagr">CAGR</a></li>
+            <!-- <button type="submit" name="cagr_submit_btn" value="CAGR" class="cagr">CAGR</button> -->
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="srchstart">
+        <form action="\submit" method="POST" class="searchbar">
+          <input class="inp" name="input" placeholder="Enter Company Name" />
+          <button class="srch2" type="submit">
+            <img
+              class="buttonsearch"
+              src="{{ url_for('static', filename='images/search.png') }}"
+            />
+          </button>
+        </form>
+      </nav>
+
+      <nav>
+        <div class="dropdown" name="namelist">
+          <ul>
+            <li>
+              <a href="/sip">SIP</a>
+            </li>
+            <!-- <button type="submit" name="sip_submit_btn" value="SIP" class="sip">SIP</button> -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- <nav>
+        <form action="\user" method="POST">
+          <a href="#"
+            ><button class="userimg">
+              <img
+                class="buttonlogo"
+                src="{{ url_for('static', filename='images/user.jpg') }}"
+              /></button
+          ></a>
+        </form>
+      </nav> -->
+    </header>
+    <div class="sidebar">
+      <header>Trending Stocks</header>
+      <ul>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[0]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[0]}}">
+            <a>{{trendingkeys[0]}}</a><b>{{trendingvals[0]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[1]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[1]}}">
+            <a>{{trendingkeys[1]}}</a><b>{{trendingvals[1]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[2]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[2]}}">
+            <a>{{trendingkeys[2]}}</a><b>{{trendingvals[2]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[3]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[3]}}">
+            <a>{{trendingkeys[3]}}</a><b>{{trendingvals[3]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[4]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[4]}}">
+            <a>{{trendingkeys[4]}}</a><b>{{trendingvals[4]}}%</b>
+          </button>
+        </form>
+      </ul>
+    </div>
+    <div class="data">
+      <div class="border">
+      <header></header>
+      <form action="\datasip" , method="POST">
+        <hr />
+        <a>Select the Program</a>
+        <hr />
+        <select
+          class="dropdown"
+          name="program_number"
+          label="Select The Program"
+          id="prog_num"
+        >
+          <option value="prog_type">Custom</option>
+          <option value="namedd">SIP of any Stock</option>
+        </select>
+        <div class="extradata">
+          <div class="extradata1" id="prog_type">
+            <hr />
+            <a>Program Type</a>
+            <hr />
+            <select class="dropdown" name="program_type" label="Program Type">
+              <option>Top 5 Trending</option>
+                <option>Top 4 Trending</option>
+                <option>Top 3 Trending</option>
+                <option>Top 2 Trending</option>
+                <option>Top 1 Trending</option>
+            </select>
+            <hr />
+          </div>
+          <div class="extradata1" id="namedd">
+            <hr />
+            <select class="extra" name="namedropdown">
+              <option>{{compname}}</option>
+              {% for i in namedata%}
+              <option>{{i}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <!-- <h2>1 is the prog where we have made some custom mutual fund in which you invest in out trading stock</h2>
+        <hr />
+        <h2>2 is the prog where you can sip any stock you want</h2>
+        <hr /> -->
+        </div>
+        <hr />
+        <a>Frequency</a>
+        <hr />
+        <select class="extra" name="frequency" label="Select The Program">
+          <option>Monthly</option>
+          <option>Half Yearly</option>
+          <option>Yearly</option>
+        </select>
+        <hr />
+        <a>Enter Number of Years:</a>
+        <input required type="number" name="period" />
+        <hr />
+        <a>Enter Amount:</a>
+        <input required type="number" name="amount" />
+        <hr />
+        <input type="submit" value="SUBMIT" class="submitbutton" />
+        <hr />
+      </form>
+      <a>Profit/Loss: Rs {{amount1}}</a>
+      <a>Profit/Loss %: {{netprofit}}%</a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#prog_num").on("change", function() {
+          <!-- alert($(this).val()); -->
+          $(".extradata1").hide();
+          $("#" + $(this).val()).show();
+        }).change();
+    });
+  </script>
+</html>

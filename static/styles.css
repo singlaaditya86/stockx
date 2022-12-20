@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #F2F2F2;
+    text-decoration: none;
+}
+
+input,a,select,b,header {
+    font-family: "Iceland", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 2%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo{
+    width: 40px;
+    height: 42.42px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.dropdown{
+    width: 180px;
+    height: 50px;
+    list-style-type: square;
+    display: flex;
+    background-color: #FFFFFF;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+
+}
+.dropdown ul li{
+    display: flex;
+    width: 90px;
+    height: 50px;
+    border: black;
+    border-width: 1px;
+    border-style:double;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown ul li:hover{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.content{
+    width: 180px;
+    height: 50px;
+    display: inline-table;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.srchstart{
+    background-color: #FFFFFF;
+}
+
+.searchbar{
+    width: 400px;
+    height: 40px;
+    border: none;
+    background: #DBE2FC;
+    display: flex;
+    border-radius: 42px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inp{
+    width: 335px;
+    height: 40px;
+    border: none;
+    padding: 0px 20px;
+    background: transparent;
+    border-radius: 42px;
+
+}
+
+
+.srch2{
+    border-radius: 50px;
+    border: none;
+    width: 73px;
+    height: 40px;
+    padding: 0px 20px;
+    background: #ABBBF5;
+}
+
+.srch2:hover{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.buttonsearch{
+    width: 23px;
+    height: 23px;
+    background: transparent;
+}
+
+.userimg{
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.buttonlogo{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+}
+
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar header{
+    color: red;
+    text-align: center;
+    line-height: 70px;
+    background-color: #ffffff;
+    user-select: none;
+}
+
+.sidebar ul{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    background: #ffffff;
+}
+
+.sidebar ul button{
+    width: 100%;
+    height: 62px;
+    text-align: center;
+    border: none;
+    list-style-type: square;
+    display: inline-block;
+}
+.sidebar ul button:hover{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar ul button a{
+    display:inline-flex;
+    height: 100%;
+    width: 60%;
+    font-size: medium;
+    text-align: left;
+    line-height: 65px;
+    color: black;
+    background-color: #ffffff;
+    padding-left: 20px;
+}
+
+.sidebar ul button b{
+    display: inline-flex;
+    text-align: right;
+    font-size: medium;
+    height: 100%;
+    width: 40%;
+    line-height: 65px;
+    color: black;
+    background-color: #ffffff;
+    padding-right: 20px;
+}
+
+.data {
+    position: fixed;
+    text-align: center;
+    right: 0;
+    width: 79.9%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.data header{
+    height: 30px;
+    user-select: none;
+    box-shadow: none;
+    background-color: none;
+    background: none;
+}
+
+.data select{
+    width: 60%;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+    list-style-type: square;
+    display: inline-block;
+    
+}
+
+.data .border{
+    position: fixed;
+    align-content: center;
+    left:30%;
+    right:10%;
+
+    align-items: center;
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+.data select{
+    width: 60%;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+    list-style-type: square;
+    display: inline-block;
+}
+
+.data select option{
+    align-content: center;
+    display: inline-block;
+}
+
+.data header{
+    height: 15px;
+    user-select: none;
+    background: none;
+
+}
+
+.data hr{
+    height: 15px;
+    border: none;
+}
+
+.submitbutton{
+    width: 10%;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+    list-style-type: square;
+    display: inline-block;
+    
+}
+
+.submitbutton:hover{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.dataprocess{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    list-style-type: square;
+}

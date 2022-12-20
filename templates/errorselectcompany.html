@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>StockX</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/"><img
+        class="logo"
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="logo"
+      /></a>
+      <nav>
+        <div class="dropdown" name="namelist">
+          <ul>  
+          <li><a href="/cagr">CAGR</a></li>
+              <!-- <button type="submit" name="cagr_submit_btn" value="CAGR" class="cagr">CAGR</button> -->
+            </ul>
+          </div>
+      </nav>
+
+      <nav class="srchstart">
+        <form action="\submit" method="POST" class="searchbar">
+          <input
+            class="inp"
+            name = "input"
+            placeholder="Enter Company Name" 
+          />
+          <button class="srch2" type="submit">
+            <img
+              class="buttonsearch"
+              src="{{ url_for('static', filename='images/search.png') }}"
+            />
+          </button>
+        </form>
+      </nav>
+      <nav>
+        <div class="dropdown" name="namelist">
+          <ul>
+            <li>
+              <a href="/sip">SIP</a>
+            </li>
+            <!-- <button type="submit" name="sip_submit_btn" value="SIP" class="sip">SIP</button> -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- <nav>
+        <form action="\user" method="POST">
+          <a href="#"
+            ><button class="userimg">
+              <img
+                class="buttonlogo"
+                src="{{ url_for('static', filename='images/user.jpg') }}"
+              /></button
+          ></a>
+        </form>
+      </nav> -->
+    </header>
+    <div class="sidebar">
+      <header>Trending Stocks</header>
+      <ul>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[0]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[0]}}">
+            <a>{{trendingkeys[0]}}</a><b>{{trendingvals[0]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[1]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[1]}}">
+            <a>{{trendingkeys[1]}}</a><b>{{trendingvals[1]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[2]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[2]}}">
+            <a>{{trendingkeys[2]}}</a><b>{{trendingvals[2]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[3]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[3]}}">
+            <a>{{trendingkeys[3]}}</a><b>{{trendingvals[3]}}%</b>
+          </button>
+        </form>
+        <form action="\trend" method="POST">
+          <input
+            type="hidden"
+            name="Trend"
+            id="Trends"
+            value="{{trendingkeys[4]}}"
+          />
+          <button type="submit" name="submit_btn" value="{{trendingkeys[4]}}">
+            <a>{{trendingkeys[4]}}</a><b>{{trendingvals[4]}}%</b>
+          </button>
+        </form>
+      </ul>
+    </div>
+    <div class="data">
+      <div class="border">
+      <header></header>
+      <form action="\data" , method="POST">
+        <select class="form-control" name="namedropdown">
+          <option>{{compname}}</option>
+          {% for i in namedata%}
+          <option>{{i}}</option>
+          {% endfor %}
+        </select>
+        <hr />
+        <input type="submit" value="SUBMIT" class="submitbutton" />
+        <hr />
+      </form>
+      <h1>Select a company</h1>
+      </div>
+    </div>
+  </body>
+</html>
