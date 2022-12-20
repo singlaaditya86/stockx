@@ -4,7 +4,6 @@ from flask import Flask,render_template,request
 import requests
 from datetime import datetime
 import pandas as pd
-import panel as pn
 from datetime import date
 import olddata as old
 
@@ -15,7 +14,6 @@ global trendStock
 file = pd.read_excel("MCAP31032022.xlsx")
 compnamedata = []
 api_key = 'e5eefe72ca6d0ae3fe6eed73705d47121f0e3dad99908345f7439f8ffabdffc4'
-pn.extension()
 
 def get_stock_price(api):
     url = f"https://api.stockmarketapi.in/api/v1/allstocks?token={api}"
